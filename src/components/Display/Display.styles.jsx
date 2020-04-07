@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-const FeaturedMovieContainer = styled.div `
+const DisplayContainer = styled.div`
   .row{
      ${'' /* border: 2px solid black; */}
      width: 100 %
 
      .col{
-         border: 2px solid yellow;
-         ${ '' /* max-width: 40%; */ }
+         ${'' /* border: 2px solid yellow; */}
+         ${ '' /* max-width: 40%; */}
          width: 25 %;
          margin: 3px;
          display: flex;
@@ -28,7 +28,7 @@ const FeaturedMovieContainer = styled.div `
  }
 `;
 
-export default FeaturedMovieContainer ;
+export default DisplayContainer;
 
 //  .row{
 //     border: 2px solid black;
@@ -40,7 +40,7 @@ export default FeaturedMovieContainer ;
 //         width: 25 %;
 //         margin: 3px;
 //         display: flex;
-        
+
 //         .card{
 //             border: 2px solid red;
 //             width: 50 %;

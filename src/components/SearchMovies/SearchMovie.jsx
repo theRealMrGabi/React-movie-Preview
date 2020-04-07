@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import SearchMovieContainer from './SearchMovieContainer';
+import { apiKey } from '../config';
 import useFetch from '../services/useFetch';
+import Display from '../Display/Display';
+import SearchMovieContainer from './SearchMovieContainer';
 
 const SearchMovie = () => {
-    const apiKey = "d04a5b8f43cfae3458709d8a5cc36fe7";
+    // const apiKey = "d04a5b8f43cfae3458709d8a5cc36fe7";
 
     const [searchQuery, setSearchQuery] = useState('avengers');
     const [url, setUrl] = useState(`https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=avengers&page=1&include_adult=true`)
@@ -37,7 +39,9 @@ const SearchMovie = () => {
                 </form>
             </div>
 
-            <div className="row">
+            <Display movies={movies}/>
+
+            {/* <div className="row">
                 {movies.slice(0, 8).map(movie => (
                     <div className="col s12 m6 l3" key={movie.id} >
                         <div className="card hoverable">
@@ -50,7 +54,7 @@ const SearchMovie = () => {
                         </div>
                     </div>
                 ))}
-            </div>
+            </div> */}
         </SearchMovieContainer>
     )
 }
