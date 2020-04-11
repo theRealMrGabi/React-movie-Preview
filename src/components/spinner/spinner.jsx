@@ -90,4 +90,4 @@ const SpinnerContainer = styled.div `
 }
 `;
 
-export default Spinner
+export default Spinner ;

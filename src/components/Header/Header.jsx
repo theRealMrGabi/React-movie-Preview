@@ -1,85 +1,81 @@
-import React, {useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import useFetch from '../services/useFetch';
 import { apiKey } from '../config';
+import Swiper from 'react-id-swiper';
 import HeaderContainer from './HeaderStyles';
-import M from 'materialize-css';
-import computer from './computer.jpg';
-import iphone from './iphone_held.jpg';
-import macbook from './closed_macbook.jpg'
-
+import { ButtonContainer } from '../Button/Button';
+import Spinner from '../spinner/spinner';
+import 'swiper/css/swiper.css'
 
 const Header = () => {
 
-    //trending tv shows// https://api.themoviedb.org/3/trending/tv/week?api_key=d04a5b8f43cfae3458709d8a5cc36fe7
-    //upcoming movies https://api.themoviedb.org/3/movie/upcoming?api_key=d04a5b8f43cfae3458709d8a5cc36fe7&language=en-US&page=1
-    //popular movies https://api.themoviedb.org/3/movie/popular?api_key=d04a5b8f43cfae3458709d8a5cc36fe7&language=en-US&page=1
-    //top rated movies https://api.themoviedb.org/3/movie/top_rated?api_key=d04a5b8f43cfae3458709d8a5cc36fe7&language=en-US&page=1
-
     const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
+    const [{ movies, isloading, error }] = useFetch(url);
 
-    const [{ movies, isloading, error }] = useFetch(url); 
+    const params = {
+        spaceBetween: 30,
+        centeredSlides: true,
+        rebuildOnUpdate: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        }
+    };
 
-    //large pics {movie.backdrop_path}
-    //snippet {overview}
-    useEffect(() => {
-        const elem = document.querySelector('.slider');
-        M.Slider.init(elem, {
-            indicators: true,
-            height: 600,
-            transition: 500,
-            interval: 6000
-        })
-    }, [])
-    
     return (
-        <HeaderContainer>
-            {/* <h1>theMoviepreview</h1> */}
+        <HeaderContainer className="col s12 m6">
+            {isloading ? <Spinner /> : 
+            <Swiper {...params}>
+                {movies.slice(0, 15).map(movie => (
+                    <div key={movie.id}>
+                        <span>
+                            <div>
+                                <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title} />
 
-            {/* <div className="slider">
-                <ul className="slides">
-                    <li>
-                        <img src={computer} alt=""/>
-                        <div className="caption center-align">
-                            <h3>This is our big Tagline!</h3>
-                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                        </div>
-                    </li><li>
-                        <img src={macbook} alt=""/>
-                        <div className="caption center-align">
-                            <h3>This is our big Tagline!</h3>
-                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                        </div>
-                    </li><li>
-                        <img src={iphone} alt=""/>
-                        <div className="caption center-align">
-                            <h3>This is our big Tagline!</h3>
-                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                        </div>
-                    </li>
-                </ul>
-            </div> */}
-
-                <div className="slider">
-                    <ul className="slides" >
-                    {movies.slice(0, 5).map(movie => (
-                        <li key={movie.id}>
-                            <Link to='/'>
-                                <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title}
-                                    // style={{ height: "80vh", width:"100%" }}
-                                 />
-                            </Link>
-                            <div className="caption center-align">
-                                <h3 className='teal-text text-accent-4'>
-                                    <p>Rating {movie.vote_average}</p>
-                                </h3>
                             </div>
-                        </li>
-                    ))}
-                    </ul>
-                </div>
+                            <Link to='/'>
+                                <h5 className="navbar-brand">
+                                    THEMOVIE<span className="preview">PREVIEW</span>
+                                </h5>
+                            </Link>
+                            <div className="movie-title">
+                                <h5 className="title">{movie.title}</h5>
+                                <span className="category">
+                                    Fantasy Animation Family | Duration: 2hrs 30m 5s
+                                    </span>
+                            </div>
+                            <h6 className="carousel-caption">
+                                <ButtonContainer color>
+                                    Watch Trailer
+                                    </ButtonContainer>
+
+                                <ButtonContainer>
+                                    View Info
+                                    </ButtonContainer>
+                            </h6>
+                            <div className="rating">
+                                <ButtonContainer>
+                                    <b>Rating</b> based on {movie.vote_count} votes <br></br>
+                                    <b>{movie.vote_average}</b>
+                                </ButtonContainer>
+                            </div>
+                        </span>
+                    </div>
+                ))}
+            </Swiper>
+            }
         </HeaderContainer>
     )
 }
 
-export default Header
+export default Header;
