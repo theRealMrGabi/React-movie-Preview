@@ -1,9 +1,9 @@
 import React from 'react';
-import TrendingMovieContainer from './TrendingMovies.styles';
 import useFetch from '../services/useFetch';
 import { apiKey } from '../config';
 import Display from '../Display/Display';
-
+import ErrorDisplay from '../Error/Error';
+import Spinner from '../spinner/spinner';
 
 const TrendingMovies = () => {
 
@@ -11,17 +11,13 @@ const TrendingMovies = () => {
     const [{ movies, isloading, error }] = useFetch(url); 
 
     return (
-        <TrendingMovieContainer>
-            <Display movies={movies} />
-
-
-            {/* {movies.slice(6, 14).map(movie => (
-                <div>
-
-                </div>
-            ))} */}
-        </TrendingMovieContainer>
+        <React.Fragment>
+            {error && <ErrorDisplay />}
+            {isloading ? (<Spinner />) :(
+                <Display movies={movies} />
+            )}
+        </React.Fragment>
     )
 }
 
-export default TrendingMovies
+export default TrendingMovies ;

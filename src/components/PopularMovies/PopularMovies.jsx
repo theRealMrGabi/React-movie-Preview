@@ -2,8 +2,8 @@ import React from 'react';
 import useFetch from '../services/useFetch';
 import { apiKey } from '../config';
 import Display from '../Display/Display';
-
-import PopularMovieContainer from './PopularMovies.styles';
+import ErrorDisplay from '../Error/Error';
+import Spinner from '../spinner/spinner';
 
 const PopularMovie = () => {
 
@@ -12,9 +12,12 @@ const PopularMovie = () => {
     const [{ movies, isloading, error }] = useFetch(url);  
 
     return (
-        <PopularMovieContainer>
-            <Display movies={movies} />
-        </PopularMovieContainer>
+        <React.Fragment>
+            {error && <ErrorDisplay />}
+            {isloading ? (<Spinner />) : (
+                <Display movies={movies} />
+            )}
+        </React.Fragment>
     )
 }
 

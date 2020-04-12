@@ -2,7 +2,8 @@ import React from 'react';
 import useFetch from '../services/useFetch';
 import { apiKey } from '../config';
 import Display from '../Display/Display';
-import UpcomingMovieContainer from './UpcomingMovies.styles';
+import ErrorDisplay from '../Error/Error';
+import Spinner from '../spinner/spinner';
 
 const UpcomingMovies = () => {
 
@@ -11,10 +12,13 @@ const UpcomingMovies = () => {
     const [{ movies, isloading, error }] = useFetch(url); 
 
     return (
-        <UpcomingMovieContainer>
-            <Display movies={movies} />
-        </UpcomingMovieContainer>
+        <React.Fragment>
+            {error && <ErrorDisplay />}
+            {isloading ? (<Spinner />) : (
+                <Display movies={movies} />
+            )}
+        </React.Fragment>
     )
 }
 
-export default UpcomingMovies
+export default UpcomingMovies ;

@@ -25,7 +25,6 @@ const HeaderContainer = styled.div`
 
                     .preview{
                         font-weight: bold;
-                        ${'' /* color: var(--white); */}
                         color: var(--mainPink);
                         font-size: 2rem;
                     }

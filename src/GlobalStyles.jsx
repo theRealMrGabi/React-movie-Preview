@@ -18,10 +18,22 @@ const GlobalStyles = createGlobalStyle `
     }
 
     body{
-        ${'' /* background: var(--background); */}
+        background: var(--background);
         color: var(--text);
         margin: 0 !important;
         padding: 0 !important;
+        position: relative;
+    }
+
+    .spinner{
+        position: absolute;
+        left: 50%;
+        right: 10rem;
+    }
+
+    .error{
+        color: var(--text);
+        background: var(--mainPink);
     }
 `;
 

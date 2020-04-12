@@ -6,6 +6,7 @@ import Swiper from 'react-id-swiper';
 import HeaderContainer from './HeaderStyles';
 import { ButtonContainer } from '../Button/Button';
 import Spinner from '../spinner/spinner';
+import ErrorDisplay from '../Error/Error';
 import 'swiper/css/swiper.css'
 
 const Header = () => {
@@ -34,8 +35,10 @@ const Header = () => {
 
     return (
         <HeaderContainer className="col s12 m6">
-            {isloading ? <Spinner /> : 
-            <Swiper {...params}>
+            {error && <ErrorDisplay />}
+
+            {isloading ? (<Spinner />)  :
+            (<Swiper {...params}>
                 {movies.slice(0, 15).map(movie => (
                     <div key={movie.id}>
                         <span>
@@ -73,7 +76,7 @@ const Header = () => {
                     </div>
                 ))}
             </Swiper>
-            }
+            )}
         </HeaderContainer>
     )
 }

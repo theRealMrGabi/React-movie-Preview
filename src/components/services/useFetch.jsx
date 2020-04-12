@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Axios from 'axios';
 
 const useFetch = (url) => {
@@ -31,4 +31,4 @@ const useFetch = (url) => {
     return [{ movies, isloading, error }]
 }
 
-export default useFetch
+export default useFetch ;
