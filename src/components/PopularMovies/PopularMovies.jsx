@@ -8,7 +8,7 @@ import Spinner from '../spinner/spinner';
 const PopularMovie = () => {
 
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
-
+    
     const [{ movies, isloading, error }] = useFetch(url);  
 
     return (

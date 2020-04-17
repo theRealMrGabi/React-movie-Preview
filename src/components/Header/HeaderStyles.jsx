@@ -13,7 +13,7 @@ const HeaderContainer = styled.div`
 
                 img{
                     width: 100% !important;
-                    height: 90vh !important;
+                    ${'' /* height: 90vh !important; */}
                     display: flex;
                 }
 

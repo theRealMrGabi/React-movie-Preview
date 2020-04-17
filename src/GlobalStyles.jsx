@@ -18,11 +18,17 @@ const GlobalStyles = createGlobalStyle `
     }
 
     body{
-        background: var(--background);
+        ${'' /* background: var(--background); */}
+        background: var(--white);
         color: var(--text);
         margin: 0 !important;
         padding: 0 !important;
         position: relative;
+    }
+
+    .transform{
+        font-weight: bold;
+        font-size: 1.5rem;
     }
 
     .spinner{

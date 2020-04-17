@@ -2,10 +2,8 @@ import React from 'react';
 import {Route , Switch} from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage';
 import Details from './components/Details/Details';
-import Footer from './components/Footer/Footer';
-// import M from 'materialize-css';
+// import Footer from './components/Footer/Footer';
 import 'materialize-css/dist/css/materialize.min.css';
-// import Spinner from './components/spinner/spinner';
 
 const App = () => {
 
@@ -13,12 +11,11 @@ const App = () => {
 
   return (
     <React.Fragment>
-        {/* <Spinner className="spinner" /> */}
       <Switch>
         <Route exact path='/' component={Homepage} />
-        <Route path='/details/:id' component={Details} />
+        <Route path='/details/:movie_id' component={Details} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   )
 }

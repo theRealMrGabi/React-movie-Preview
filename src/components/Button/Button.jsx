@@ -14,7 +14,7 @@ export const ButtonContainer = styled.button`
     }
 
     ${ props => {
-        if(props.color){
+        if(props.btncolor){
             return `
             color: var(--white);
             background: var(--mainPink);

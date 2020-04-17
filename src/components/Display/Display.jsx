@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import DisplayContainer from './Display.styles';
 
 const Display = ({movies}) => {
@@ -18,15 +18,23 @@ const Display = ({movies}) => {
         return title;
     };
 
+    const handleClick = (id) => {
+        window.location.href = `details/${id}`;
+    }
+    
     return (
         <DisplayContainer>
-            <div className="row">
+            <div className="row" >
                 {movies.slice(0, 8).map(movie => (
                     <div className="col s12 m6 l3" key={movie.id} >
                         <div className="card hoverable">
                             <div className="card-image">
-                                <Link to='/'>
-                                    <img src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`} alt={`${movie.name}`} />
+                                <Link to={'/details/' + movie.id} onClick={() => handleClick(movie.id)}>
+                                    <img 
+                                        src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`} 
+                                        alt={`${movie.name}`} 
+                                        className="responsive-img"
+                                    />
                                 </Link>
                             </div>
                             <div className="card-action">
@@ -40,4 +48,4 @@ const Display = ({movies}) => {
     )
 }
 
-export default Display
+export default Display ;
