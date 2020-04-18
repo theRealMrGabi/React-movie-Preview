@@ -3,7 +3,7 @@ import React , {useEffect} from 'react';
 import TrendingMovies from '../TrendingMovies/TrendingMovies';
 import PopularMovie from '../PopularMovies/PopularMovies';
 import UpcomingMovies from '../UpcomingMovies/UpcomingMovies';
-import FeaturedMovie from '../FeaturedMovies/FeaturedMovie';
+// import FeaturedMovie from '../FeaturedMovies/FeaturedMovie';
 
 import TabbedContainer from './Tabbed-Content.styles';
 import M from 'materialize-css';

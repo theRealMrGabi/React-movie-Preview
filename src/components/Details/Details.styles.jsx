@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const DetailsContainer = styled.div`
-
+   
     .poster-image{
         img{
             width: 100% !important;
@@ -11,34 +11,50 @@ const DetailsContainer = styled.div`
     .movie-details{
         display: flex;
         margin: 3rem 0;
+        padding: 3rem 0;
         width: 100% !important;
-        padding: 0 3rem;
+        height: 100% !important;
 
         .preview-image{
-            width: 40% !important;
+            width: 30% !important;
+            margin: 0;
+            padding: 0 2rem;
 
             img{
-                width: 100% !important;
+                width: 100%;
             }
         }
 
         .other-details{
-            width: 60% !important;
-            margin: 0 10rem;
+            width: 70% !important;
+            margin: 0 2rem;
 
-            .runtime{
-
+            .movie-summary{
+                margin: 2rem;
             }
 
-            .movie-genre{
-                display: flex;
+            .runtime{
+                display: grid;
+                gap: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                padding: 3rem 2rem;
+
+                .runtime-cover{
+                    position: relative;
+
+                    .runtime-details{
+                        position: absolute;
+                        top: 3rem;
+                        left: 5rem;
+                        font-size: 1.2rem;
+                    }
+                }
+
             }
     }}
 
     .trailer{
-        margin: 0 5rem !important;
-        ${'' /* padding: 0 2rem 2rem 2rem; */}
-        padding: 0 5rem !important;
+        margin: 2rem 3rem !important;
 
         .trailer-text{
             font-weight: bold;

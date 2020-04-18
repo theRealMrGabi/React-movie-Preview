@@ -15,10 +15,8 @@ const useVideoDetails = (url) => {
 
             await Axios.get(url)
                 .then(response => {
-                    // const featuredResult = response.data;
                     const featuredResult = response.data.results;
                     setCurrentVideo(featuredResult)
-                    console.log(featuredResult);
                 })
 
                 .catch(error => {

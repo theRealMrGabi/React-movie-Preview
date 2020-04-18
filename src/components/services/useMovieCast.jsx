@@ -17,7 +17,6 @@ const useMovieCast = (url) => {
                 .then(response => {
                     const featuredResult = response.data.cast;
                     setMovieCast(featuredResult)
-                    console.log(featuredResult);
                 })
 
                 .catch(error => {

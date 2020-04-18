@@ -18,7 +18,6 @@ const GlobalStyles = createGlobalStyle `
     }
 
     body{
-        ${'' /* background: var(--background); */}
         background: var(--white);
         color: var(--text);
         margin: 0 !important;
@@ -31,6 +30,11 @@ const GlobalStyles = createGlobalStyle `
         font-size: 1.5rem;
     }
 
+    hr{
+        margin: 0 5rem;
+        border: 3px solid var(--mainPink);
+        border-radius: 2px;
+    }
     .spinner{
         position: absolute;
         left: 50%;

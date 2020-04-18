@@ -13,7 +13,9 @@ const SpinnerContainer = styled.div `
 .lds-spinner {
   color: official;
   display: inline-block;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 12%;
   width: 80px;
   height: 80px;
 }

@@ -60,18 +60,18 @@ const Header = () => {
                                 </Link>
                                 <div className="movie-title">
                                     <h5 className="title">{movie.title}</h5>
-                                    <span className="category">
+                                    {/* <span className="category">
                                         Fantasy Animation Family | Duration: 2hrs 30m 5s
-                                    </span>
+                                    </span> */}
                                 </div>
-                                <h6 className="carousel-caption">
+                                <h6 className="carousel-caption hide-on-small-only">
                                     <ButtonContainer btncolor>
                                         Watch Trailer
-                                </ButtonContainer>
+                                    </ButtonContainer>
 
                                     <ButtonContainer onClick={() => handleClick(movie.id)} >
                                         View Info
-                                </ButtonContainer>
+                                    </ButtonContainer>
                                 </h6>
                                 <div className="rating hide-on-small-only">
                                     <ButtonContainer>

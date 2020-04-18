@@ -16,7 +16,6 @@ const useFetch = (url) => {
                 .then(response => {
                     const movieResult = response.data.results;
                     setMovies(movieResult)
-                    // console.log(movieResult)
                 })
 
                 .catch( error => {

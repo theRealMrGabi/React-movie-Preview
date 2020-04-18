@@ -17,10 +17,8 @@ const Details = (props) => {
     const [{ currentMovie, isloading, error }] = useDetails(detailsUrl);
     const [{ currentVideo , videoLoading, videoError }] = useVideoDetails(videoDetailsUrl);
     const [{ movieCast, castLoading, castError }] = useMovieCast(movieCastUrl) ;
-    console.log(movieCast)
 
-
-    const { backdrop_path, title, poster_path, budget, revenue, overview, vote_average, popularity, runtime, genres, release_date, tagline, production_countries } = currentMovie;
+    const { backdrop_path, title, poster_path, budget, revenue, overview, vote_average, popularity, runtime, release_date, tagline } = currentMovie;
 
     return (
         <DetailsContainer >
@@ -40,17 +38,62 @@ const Details = (props) => {
                             alt={title} 
                         />
                     </div>
+
                     <div className="other-details">
                         <h2 className="movie-title center">{title}</h2>
+                        <h6 className="center transform">{tagline ? tagline : " "}</h6>
+
                         <h5 className="movie-summary">{overview}</h5>
 
                         <div className="runtime">
-                            <div><span className="transform">Runtime</span>: {runtime}</div>
-                            <div className="release-date">
-                                <span className="transform">Release Date</span> : {release_date ? release_date : "Release Date N/A"}
+                            <div className="runtime-cover">
+                                <span className="transform">Runtime</span>
+                                <br/>
+                                <i className="medium material-icons">timelapse</i>
+                                <div className="runtime-details">
+                                    {runtime} Minutes
+                                </div> 
                             </div>
-                            <div><span className="transform">Budget</span>: {budget}</div>
-                            <div><span className="transform">Revenue</span>: {revenue}</div>
+                            <div className="runtime-cover">
+                                <span className="transform">Popularity</span>
+                                <br/>
+                                <i className="medium material-icons">favorite</i>
+                                  <div className="runtime-details">
+                                    {popularity}
+                                </div>
+                            </div>
+                            <div className="runtime-cover">
+                                <span className="transform">Release Date</span>
+                                <br/> 
+                                <i className="medium material-icons">date_range</i>
+                                  <div className="runtime-details">
+                                    {release_date ? release_date : "N/A"}
+                                </div>
+                            </div>
+                            <div className="runtime-cover">
+                                <span className="transform">Budget</span>
+                                <br/>
+                                <i className="medium material-icons">attach_money</i>
+                                  <div className="runtime-details">
+                                    {budget ? budget : "N/A "}
+                                </div> 
+                            </div>
+                            <div className="runtime-cover">
+                                <span className="transform">Revenue</span>
+                                <br/>
+                                <i className="medium material-icons">monetization_on</i>
+                                  <div className="runtime-details">
+                                    {revenue ? revenue : "N/A"}
+                                </div>  
+                            </div>
+                            <div className="runtime-cover">
+                                <span className="transform">Vote Average</span>
+                                <br/>
+                                <i className="medium material-icons">fingerprint</i>
+                                  <div className="runtime-details">
+                                    {vote_average ? vote_average : "N/A"}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,12 +103,11 @@ const Details = (props) => {
 
             {videoError && <ErrorDisplay />}
             {videoLoading ? (<Spinner />) :
-                (<div className="trailer responsive-video row">
+                (<div className="trailer responsive-video">
                     <div className="col s12">
                         <h5 className="trailer-text center">TRAILER</h5>
                         {
                             currentVideo.slice(0, 1).map(video => (
-                                // {/* <div key={video.id} className="responsive-video" > */}
                                 <div key={video.id} className="" >
                                     <iframe
                                         title={video.name}

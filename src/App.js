@@ -7,8 +7,6 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 const App = () => {
 
-    //top rated movies https://api.themoviedb.org/3/movie/top_rated?api_key=d04a5b8f43cfae3458709d8a5cc36fe7&language=en-US&page=1
-
   return (
     <React.Fragment>
       <Switch>

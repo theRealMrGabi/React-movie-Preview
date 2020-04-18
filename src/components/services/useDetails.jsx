@@ -17,7 +17,6 @@ const useDetails = (url) => {
                 .then(response => {
                     const featuredResult = response.data;
                     setCurrentMovie(featuredResult)
-                    console.log(featuredResult);
                 })
 
                 .catch(error => {
