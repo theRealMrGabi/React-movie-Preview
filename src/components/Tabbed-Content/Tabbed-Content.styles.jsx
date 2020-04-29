@@ -1,36 +1,53 @@
 import styled from 'styled-components';
+import {  mediaQueries } from '../../GlobalStyles';
 
 const TabbedContainer = styled.div `
-    margin: 0 !important;
-    padding: 0 !important;
+    border: 2px solid blue;
 
-    .custom-container{
-        .tabs-content{
-        height: 162vh !important;
+    ${mediaQueries("mobileSmall")`
+        .tabs-content,.carousel,.carousel-slider{
+            height: 4120px;
         }
-    }
 
- @media (min-width:320px ) and (max-width: 480px){
-   .custom-container{
-        .tabs-content{
-            height: 5200px !important;
+     `}
+
+    ${mediaQueries("mobileMedium")`
+        .tabs-content,.carousel,.carousel-slider{
+            height: 4800px;
         }
-    }
- }
 
- ${'' /* @media (min-width:481px ) and (max-width:768px ){
-    .row{
-        
-    }
- }
+     `}
 
- @media (min-width:769px ) and (max-width:1024px ){
-    .row{
-        
-    }
- } */}
+    ${mediaQueries("mobileLarge")`
+        .tabs-content,.carousel,.carousel-slider{
+            height: 5400px;
+        }
+     `}
+
+    ${mediaQueries("tablet")`
+        .tabs-content,.carousel,.carousel-slider{
+            height: 2470px;
+        }
+     `}
+
+    ${mediaQueries("laptop")`
+        .tabs-content,.carousel,.carousel-slider{
+            height: 850px;
+        }
+     `}
+    
+    ${mediaQueries("laptopLarge")`
+        .tabs-content,.carousel,.carousel-slider{
+            height: 1150px;
+        }
+     `}
+
+    ${mediaQueries("MacLaptop")`
+        .tabs-content,.carousel,.carousel-slider{
+            height: 2000px;
+        }
+     `}
+
 `;
 
 export default TabbedContainer ;
-
-// color: rgba(238, 110, 115, 0.7);

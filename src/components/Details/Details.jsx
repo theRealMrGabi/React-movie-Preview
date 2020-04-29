@@ -32,7 +32,7 @@ const Details = (props) => {
                 </div>
 
                 <div className="movie-details col s12 m6">
-                    <div className="preview-image">
+                    <div className="preview-image hide-on-small-only">
                         <img className="responsive-img" 
                             src={`https://image.tmdb.org/t/p/w200${poster_path}`} 
                             alt={title} 
@@ -45,9 +45,9 @@ const Details = (props) => {
 
                         <h5 className="movie-summary">{overview}</h5>
 
-                        <div className="runtime">
+                        <div className="runtime transform">
                             <div className="runtime-cover">
-                                <span className="transform">Runtime</span>
+                                <span >Runtime</span>
                                 <br/>
                                 <i className="medium material-icons">timelapse</i>
                                 <div className="runtime-details">
@@ -55,7 +55,7 @@ const Details = (props) => {
                                 </div> 
                             </div>
                             <div className="runtime-cover">
-                                <span className="transform">Popularity</span>
+                                <span >Popularity</span>
                                 <br/>
                                 <i className="medium material-icons">favorite</i>
                                   <div className="runtime-details">
@@ -63,7 +63,7 @@ const Details = (props) => {
                                 </div>
                             </div>
                             <div className="runtime-cover">
-                                <span className="transform">Release Date</span>
+                                <span>Release Date</span>
                                 <br/> 
                                 <i className="medium material-icons">date_range</i>
                                   <div className="runtime-details">
@@ -71,23 +71,23 @@ const Details = (props) => {
                                 </div>
                             </div>
                             <div className="runtime-cover">
-                                <span className="transform">Budget</span>
+                                <span>Budget</span>
                                 <br/>
                                 <i className="medium material-icons">attach_money</i>
                                   <div className="runtime-details">
-                                    {budget ? budget : "N/A "}
+                                    {budget ? `${budget.toLocaleString()}` : "N/A "}
                                 </div> 
                             </div>
                             <div className="runtime-cover">
-                                <span className="transform">Revenue</span>
+                                <span>Revenue</span>
                                 <br/>
                                 <i className="medium material-icons">monetization_on</i>
-                                  <div className="runtime-details">
-                                    {revenue ? revenue : "N/A"}
+                                <div className="runtime-details ">
+                                    {revenue ? `${revenue.toLocaleString()}` : "N/A"}
                                 </div>  
                             </div>
                             <div className="runtime-cover">
-                                <span className="transform">Vote Average</span>
+                                <span>Vote Average</span>
                                 <br/>
                                 <i className="medium material-icons">fingerprint</i>
                                   <div className="runtime-details">
@@ -151,4 +151,4 @@ const Details = (props) => {
     )
 }
 
-export default Details; 
+export default Details ; 

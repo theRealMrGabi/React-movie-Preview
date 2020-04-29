@@ -28,9 +28,6 @@ const TabbedContent = () => {
                         <li className="tab col s3"><a href="#popular">
                             <h5><i className="material-icons">filter_vintage</i> Popular</h5>
                         </a></li>
-                        {/* <li className="tab col s3"><a href="#featured">
-                            <h5><i className="material-icons">whatshot</i> Featured</h5>
-                        </a></li> */}
                         <li className="tab col s3"><a href="#upcoming">
                             <h5><i className="material-icons">file_upload</i> Upcoming</h5>
                         </a></li>
@@ -38,18 +35,16 @@ const TabbedContent = () => {
                 </div>
 
                 <div className="custom-container">
-                    <div id="trending" className="col s12 custom">
+
+                    <div id="trending" className="col s12 ">
                         <TrendingMovies />
                     </div>
-                    <div id="popular" className="col s12 custom">
+                    <div id="popular" className="col s12 ">
                         <PopularMovie />
                     </div>
-                    {/* <div id="featured" className="col s12 custom">
-                        <FeaturedMovie />
-                    </div> */}
-                    <div id="upcoming" className="col s12 custom">
+                    <div id="upcoming" className="col s12 ">
                         <UpcomingMovies />
-                    </div> 
+                    </div>
                 </div>
             </div>
         </TabbedContainer>

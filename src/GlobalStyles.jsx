@@ -14,7 +14,6 @@ const GlobalStyles = createGlobalStyle `
         --pinkHover: rgb(186,44,115);
         --text: rgb(25,29,50);
         --blueHover: rgb(95,75,182);
-
     }
 
     body{
@@ -45,6 +44,25 @@ const GlobalStyles = createGlobalStyle `
         color: var(--text);
         background: var(--mainPink);
     }
+
 `;
+
+    export const breakPoints = {
+        mobileSmall: 320,
+        mobileMedium: 375,
+        mobileLarge: 425,
+        tablet: 768,
+        laptop: 1024,
+        laptopLarge: 1440,
+        MacLaptop: 2560
+    }
+
+    export const mediaQueries = key => {
+        return style => `@media(min-width: ${breakPoints[key]}px ){${style}}`
+    }
+
+    export const maxMediaQueries = key => {
+        return style => `@media(max-width: ${breakPoints[key]}px ){${style}}`
+    }
 
 export default GlobalStyles ;

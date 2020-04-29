@@ -7,7 +7,7 @@ import HeaderContainer from './HeaderStyles';
 import { ButtonContainer } from '../Button/Button';
 import Spinner from '../spinner/spinner';
 import ErrorDisplay from '../Error/Error';
-import 'swiper/css/swiper.css'
+import 'swiper/css/swiper.css';
 
 const Header = () => {
 
@@ -88,4 +88,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Header ;

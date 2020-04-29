@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { maxMediaQueries } from '../../GlobalStyles';
 
 const DetailsContainer = styled.div`
    
@@ -27,10 +28,10 @@ const DetailsContainer = styled.div`
 
         .other-details{
             width: 70% !important;
-            margin: 0 2rem;
+            margin: 0 1rem;
 
             .movie-summary{
-                margin: 2rem;
+                margin: 1rem;
             }
 
             .runtime{
@@ -83,6 +84,23 @@ const DetailsContainer = styled.div`
             }
         }
     }
+
+    ${maxMediaQueries("mobileLarge")`
+
+        .movie-details{
+
+            .other-details{
+                width: 90% !important;
+            }
+        }
+
+        .cast-container{
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    `}
 `;
 
 export default DetailsContainer ;

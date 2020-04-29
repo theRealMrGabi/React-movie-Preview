@@ -1,34 +1,36 @@
 import styled from 'styled-components';
+import { mediaQueries } from '../../GlobalStyles';
 
 const FooterContainer = styled.div`
     background: var(--text);
     color: var(--white);
     position: relative;
-    height: 10rem;
+    height: auto;
+    padding: 1.5rem;
 
     .footer-text{
         font-weight: bold;
         font-size: 1rem;
         color: var(--mainPink);
-        position: absolute;
-        top: 5%;
-        right: 50%;
     }
 
     .social-links{
-        position: absolute;
-        top: 50%;
-        left: 30%;
         color: var(--white);
-        padding: 1rem 5rem;
+        padding: 1rem;
 
         a{
             color: var(--white);
-            padding: 0 3rem;
+            padding: 2rem;
         }
 
-        }
     }
+
+    ${mediaQueries("mobileSmall")`
+        .social-links{
+            padding: 0.5rem;
+        }
+    `}
+
 `;
 
-export default FooterContainer;
+export default FooterContainer ;
