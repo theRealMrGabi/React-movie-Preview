@@ -1,13 +1,15 @@
 import React from 'react';
 import Header from '../Header/Header';
-import TabbedContent from '../Tabbed-Content/Tabbed-Content';
 import TopRatedMovie from '../TopRatedMovies/TopRatedMovies';
+import TrendingMovies from '../TrendingMovies/TrendingMovies';
+import TrendingTv from '../TV/TrendingTv/TrendingTv';
 
 const Homepage = () => {
     return (
         <React.Fragment>
             <Header />
-            <TabbedContent />
+            <TrendingMovies />
+            <TrendingTv />
             <TopRatedMovie />
         </React.Fragment>
     )

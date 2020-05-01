@@ -4,13 +4,12 @@ import Axios from 'axios';
 const useFetch = (url) => {
 
     const [isloading, setIsLoading] = useState(false);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState(null);
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
-            setError(false);
 
             await Axios.get(url)
                 .then(response => {
@@ -19,8 +18,7 @@ const useFetch = (url) => {
                 })
 
                 .catch( error => {
-                    setError(true);
-                    console.log(error)
+                    setError(error);
                 })
             setIsLoading(false);
         }

@@ -4,14 +4,12 @@ import Axios from 'axios';
 const useDetails = (url) => {
 
     const [isloading, setIsLoading] = useState(false);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState(null);
     const [currentMovie, setCurrentMovie] = useState([]);
-
 
     useEffect(() => {
         const fetchData = async () =>{
             setIsLoading(true);
-            setError(false);
 
             await Axios.get(url)
                 .then(response => {

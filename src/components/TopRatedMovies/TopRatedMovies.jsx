@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link} from 'react-router-dom';
 import useFetch from '../services/useFetch';
 import { apiKey } from '../config';
 import ErrorDisplay from '../Error/Error';
@@ -9,7 +8,6 @@ import Spinner from '../spinner/spinner';
 const TopRatedMovie = () => {
 
     const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1` ;
-    
     const [{ movies, isloading, error }] = useFetch(url); 
 
     return (

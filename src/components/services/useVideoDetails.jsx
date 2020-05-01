@@ -4,14 +4,13 @@ import Axios from 'axios';
 const useVideoDetails = (url) => {
 
     const [videoLoading, setVideoLoading] = useState(false);
-    const [videoError, setVideoError] = useState(false);
+    const [videoError, setVideoError] = useState(null);
     const [currentVideo, setCurrentVideo] = useState([]);
 
 
     useEffect(() => {
         const fetchData = async () => {
             setVideoLoading(true);
-            setVideoError(false);
 
             await Axios.get(url)
                 .then(response => {

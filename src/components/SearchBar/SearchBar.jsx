@@ -5,15 +5,14 @@ import Display from '../Display/Display';
 import ErrorDisplay from '../Error/Error';
 import Spinner from '../spinner/spinner';
 
-const PopularMovie = () => {
+const SearchBar = () => {
+    const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
 
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
-    const [{ movies, isloading, error }] = useFetch(url);  
+    const [{ movies, isloading, error }] = useFetch(url);
 
     return (
         <React.Fragment>
-            <h3 className="center">Popular Movies</h3>
-
+            <h3 className="center">Trending Movies</h3>
             {error && <ErrorDisplay />}
             {isloading ? (<Spinner />) : (
                 <Display movies={movies} />
@@ -22,4 +21,4 @@ const PopularMovie = () => {
     )
 }
 
-export default PopularMovie ;
+export default SearchBar ; 

@@ -53,11 +53,6 @@ const Header = () => {
                                     />
                                 </Link>
 
-                                <Link to='/'>
-                                    <h5 className="navbar-brand">
-                                        THEMOVIE<span className="preview">PREVIEW</span>
-                                    </h5>
-                                </Link>
                                 <div className="movie-title">
                                     <h5 className="title">{movie.title}</h5>
                                     {/* <span className="category">
@@ -65,6 +60,7 @@ const Header = () => {
                                     </span> */}
                                 </div>
                                 <h6 className="carousel-caption hide-on-small-only">
+
                                     <ButtonContainer btncolor>
                                         Watch Trailer
                                     </ButtonContainer>

@@ -22,7 +22,6 @@ const FooterContainer = styled.div`
             color: var(--white);
             padding: 2rem;
         }
-
     }
 
     ${mediaQueries("mobileSmall")`
