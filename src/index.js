@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import App from './App';
 import GlobalStyles from './GlobalStyles';
+import 'materialize-css/dist/js/materialize.min'
 import * as serviceWorker from './serviceWorker';
 
 

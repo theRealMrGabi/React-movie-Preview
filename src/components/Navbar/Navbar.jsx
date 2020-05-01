@@ -24,7 +24,10 @@ const Navbar = () => {
     useEffect(() => {
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems);
+            M.Sidenav.init(elems , {
+                draggable: true,
+                isOpen: true
+            });
         });
     }, []);
 
@@ -41,7 +44,7 @@ const Navbar = () => {
                             <Link to='/popular'><i className="material-icons left">filter_vintage</i>Popular</Link>
                         </li>
                         <li>
-                            <Link to='/upcoming'><i className="material-icons left">trending_up</i>Upcoming</Link>
+                            <Link to='/upcoming'><i className="material-icons left">airplay</i>Upcoming</Link>
                         </li>
                         <li>
                             <Link to='/populartv'><i className="material-icons left">tv</i>PopularTv</Link>
@@ -90,7 +93,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/upcoming' className="text-link"><i className="material-icons white-text">trending_up</i>Upcoming Movies</Link>
+                    <Link to='/upcoming' className="text-link"><i className="material-icons white-text">airplay</i>Upcoming Movies</Link>
                 </li>
                 <li>
                     <Link to='/populartv' className="text-link"><i className="material-icons white-text">tv</i>PopularTv</Link>

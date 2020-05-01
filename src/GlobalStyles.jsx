@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle `
         margin: 0 !important;
         padding: 0 !important;
         position: relative;
+        box-sizing: border-box;
     }
 
     .transform{

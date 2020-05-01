@@ -21,6 +21,10 @@ const HeaderContainer = styled.div`
                     margin: 1rem 5rem;
                     color: rgba(255,255,255 , 0.9);
 
+                    &:visited{
+                        color: rgba(255,255,255 , 0.9);
+                    }
+
                     .preview{
                         font-weight: bold;
                         color: var(--mainPink);
@@ -32,6 +36,10 @@ const HeaderContainer = styled.div`
                     position: absolute;
                     bottom: 7rem;
                     margin: 1rem 5rem;
+
+                    .title{
+                        color: var(--white);
+                    }
 
                 }
                 .carousel-caption{

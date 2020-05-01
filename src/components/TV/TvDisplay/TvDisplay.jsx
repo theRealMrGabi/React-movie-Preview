@@ -26,7 +26,7 @@ const TvDisplay = ({ movies }) => {
         <TvDisplayContainer>
             <div className="row" >
                 {movies.slice(0, 8).map(movie => (
-                    <div className="col s12 m6 l3" key={movie.id} >
+                    <div className="col s6 m6 l3" key={movie.id} >
                         <div className="card hoverable">
                             <div className="card-image">
                                 <Link to={'/details/' + movie.id} onClick={() => handleClick(movie.id)}>

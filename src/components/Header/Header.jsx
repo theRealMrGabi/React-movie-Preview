@@ -54,7 +54,7 @@ const Header = () => {
                                 </Link>
 
                                 <div className="movie-title">
-                                    <h5 className="title">{movie.title}</h5>
+                                    <h4 className="title">{movie.title}</h4>
                                     {/* <span className="category">
                                         Fantasy Animation Family | Duration: 2hrs 30m 5s
                                     </span> */}

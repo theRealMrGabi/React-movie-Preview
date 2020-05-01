@@ -18,33 +18,31 @@ theMoviePREVIEW is an entertainment web-app to stay updated and never miss any a
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
-* REACT.JS
-* MATERIALISE-CSS
-* STYLED-COMPONENTS
-* REACT-ID-SWIPER
+* REACT.JS - { Hooks, Styled-components , React-Id-Swiper}
+* MATERIALIZE-CSS
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
-
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
+* Clone the repository
+* run `npm install` to install dependencies
+* cd into React-movie-Preview and run `npm start`
+* view the project @ [@theMoviePreview](https://www.themoviepreview.netlify.com/)
 
 ## Features
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* Get Updated , Trending and Upcoming Movies and Tv Shows 
+* Watch Trailers for Movies and Tv Shows
+* Get additional details like cast, revenue, release date, budget etc
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Search Movie option will be implemented shortly
+* Pagination will also be included
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Project progress is 80% .
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+* This project was borne out of the desire to keep up with trending movie and tv shows when it's relaxation time.
+* Credit to [themoviedb](https://www.themoviedb.org) for providing the API which this project was built on.
 
 ## Contact
-Created by [@theRealMrGabi](https://www.linkedin.com/in/ibrahimadegabi/) - feel free to contact me!
+Created by [@theRealMrGabi](https://www.linkedin.com/in/ibrahimadegabi/) . Feel free to contact me!

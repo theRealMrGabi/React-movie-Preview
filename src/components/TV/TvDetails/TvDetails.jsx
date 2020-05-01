@@ -74,7 +74,7 @@ const TvDetails = (props) => {
                             <div className="runtime-cover">
                                 <span>Seasons</span>
                                 <br />
-                                <i className="medium material-icons">monetization_on</i>
+                                <i className="medium material-icons">all_inclusive</i>
                                 <div className="runtime-details ">
                                     {seasons ? seasons.length : "N/A"}
                                 </div>
@@ -82,7 +82,7 @@ const TvDetails = (props) => {
                             <div className="runtime-cover">
                                 <span>Total No of Episodes Aired</span>
                                 <br />
-                                <i className="medium material-icons">attach_money</i>
+                                <i className="medium material-icons">announcement</i>
                                 <div className="runtime-details">
                                     {number_of_episodes ? number_of_episodes : "N/A "}
                                 </div>
